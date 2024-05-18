@@ -1,0 +1,37 @@
+Poisson Probability Distribution
+
+Developer Organization:
+Saad, Earl			-	Computer Programmer
+Pata, Rose Marie		-	Program Designer	
+Dellavan, Jericho		-	System Analyst
+Moloboco, Mariel		-	Editor-in-Chief
+Almosa,  Jhon Micko 	-	Researcher
+Candido, Dia Camille	-	Researcher
+Estanislao, Rachelle 	-	Researcher
+
+-------------------
+
+import numpy as np
+from scipy.stats import poisson 
+import matplotlib.pyplot as plt
+ 
+print ("Welcome, user!")
+print ("\t\t\tPoisson distribution system is a probability distrubution that is used to show how many times an event occur")
+
+
+#Ask the user for the occurence and the mean
+q=eval(input("How many problem you want to solve:"))
+
+for i in range(q):
+    K = eval(input("Input the number of occurence:"))
+    u = eval(input ("Input the mean:"))
+    
+v = np.arange(0, u, 1)
+
+S=poisson.pmf(v, u)
+
+plt.bar(v, S, alpha=0.3, align='center')
+plt.xlabel('Number of Events')
+plt.ylabel('Probability')
+plt.title('Poisson Distribution (lambda={})'.format(K))
+plt.show()
